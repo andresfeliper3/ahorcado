@@ -1,0 +1,62 @@
+#ahorcado {
+  height:500px;
+  width:500px;
+  background-color:orange;
+  margin:auto;
+  border: 10px double black;
+  margin-top:50px;
+  border-radius: 10px;
+  color:black;
+  text-align: center;
+  font-family:cursive;
+}
+
+.inner {
+  font-family:cursive;
+  color:white;
+  background-color: black;
+  width:300px;
+  height:250px;
+  text-align: center;
+  margin-left:100px;
+  margin-top:50px;
+  border: 1px solid orange;
+  border-radius: 20px;
+  padding-top:50px;
+}
+.inner a:link {
+  text-decoration: none;
+  color:white;
+}
+.inner a:visited {
+  text-decoration:none;
+  color:white;
+}
+.inner a:active {
+  text-decoration: underline;
+}
+.casilla {
+  height:100px;
+  width:100px;
+  border-bottom:1px solid black;
+  display:inline-block;
+  text-align: center;
+  font-size:80px;
+  color:black;
+  margin-left:5px;
+}
+#teclado {
+  display:none;
+}
+#resto{
+  display:none;
+}
+
+p {
+  display:inline-block;
+}
+#myCanvas {
+  display:none;
+  position:relative;
+  margin-left:100px;
+}
