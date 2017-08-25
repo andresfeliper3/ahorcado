@@ -24,6 +24,7 @@ function confirm() {
   var resto = document.getElementById('resto');
   teclado.style.display="inline-block";
   resto.style.display="inline-block";
+
             //Canvas
     var canvas = document.getElementById('myCanvas');
     canvas.style.display="inline-block";
@@ -145,6 +146,8 @@ function selectEach(v) {
   body(5,100,210,30,285); //Pierna 1
   body(6,100,210,170,285); //Pierna 2
   body(7,0,102,200,102,5,"red"); //Muerte
+//Doble click en tecla acertada no se marque como otro acierto
+  //m1.innerText.indexOf();
   //Declarar victoria
     function victory() {
       if(aciertos.innerText==confirmar.length) {
@@ -171,33 +174,36 @@ function selectEach(v) {
     lose();
   });
 }
-  selectEach('q');
-  selectEach('w');
-  selectEach('e');
-  selectEach('r');
-  selectEach('t');
-  selectEach('y');
-  selectEach('u');
-  selectEach('i');
-  selectEach('o');
-  selectEach('p');
-  selectEach('a');
-  selectEach('s');
-  selectEach('d');
-  selectEach('f');
-  selectEach('g');
-  selectEach('h');
-  selectEach('j');
-  selectEach('k');
-  selectEach('l');
-  selectEach('ñ');
-  selectEach('z');
-  selectEach('x');
-  selectEach('c');
-  selectEach('v');
-  selectEach('b');
-  selectEach('n');
-  selectEach('m');
+
+
+    selectEach('q');
+    selectEach('w');
+    selectEach('e');
+    selectEach('r');
+    selectEach('t');
+    selectEach('y');
+    selectEach('u');
+    selectEach('i');
+    selectEach('o');
+    selectEach('p');
+    selectEach('a');
+    selectEach('s');
+    selectEach('d');
+    selectEach('f');
+    selectEach('g');
+    selectEach('h');
+    selectEach('j');
+    selectEach('k');
+    selectEach('l');
+    selectEach('ñ');
+    selectEach('z');
+    selectEach('x');
+    selectEach('c');
+    selectEach('v');
+    selectEach('b');
+    selectEach('n');
+    selectEach('m');
+
 //Volver
 function comeback() {
   window.history.back();

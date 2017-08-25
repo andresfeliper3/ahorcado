@@ -47,6 +47,7 @@ function animals() {
      animales = ["oso", "perro", "gato", "ave", "caballo", "jirafa"," elefante","bisonte","bufalo","burro","caballo","camello","cebra","cerdo","chimpance","ciervo","hipopotamo","jabali","leon","oveja","tigre","leopardo","guepardo","topo","toro","vaca","zorro"];
      random = Math.floor(Math.random()*animales.length+1);
      confirmar = animales[random];
+     console.log(confirmar);
   confirm();
 }
 //Frutas
@@ -54,6 +55,7 @@ function fruits() {
      frutas = ["manzana", "pera", "banano", "papaya", "mango", "piña","fresa","limon","mandarina","naranja","pomelo","melon","sandia","aguacate","chirimoya","carambolo", "coco","datil","kiwi","albaricoque","cereza","frambuesa","arandano","ciruela","higo","melocoton","nectarina","nispero","uva"];
      random = Math.floor(Math.random()*frutas.length+1);
      confirmar = frutas[random];
+     console.log(confirmar);
   confirm();
 }
 
@@ -137,7 +139,7 @@ function selectEach(v) {
         ctx.stroke();
       }
     }
-    body(2,100,90,100,300); //Cuerpo
+    body(2,100,90,100,210); //Cuerpo
     body(3,100,115,30,160); //Brazo 1
     body(4,100,115,170,160); //Brazo 2
     body(5,100,210,30,285); //Pierna 1

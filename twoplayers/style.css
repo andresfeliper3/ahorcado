@@ -1,3 +1,8 @@
+body {
+  background-image: url('https://image.freepik.com/psd-gratis/fondo-de-diseno-de-textura-blanca_1022-75.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .content {
   text-align:center;
   display:block;
