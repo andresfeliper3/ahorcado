@@ -11,7 +11,7 @@ function confirm() {
             //Canvas
     var canvas = document.getElementById('myCanvas');
     canvas.style.display="inline-block";
-    canvas.width =200;
+    canvas.width =400;
     canvas.height =400;
     ctx = canvas.getContext("2d");
   //Contador de errores (linea 79)
@@ -38,6 +38,20 @@ function confirm() {
             var espaciado = document.getElementById('cas'+espacio+'');
             espaciado.style.border = "none";
           }
+          //Canvas de la horca
+          function tree(a,b,c,d) {
+            ctx.beginPath();
+            ctx.lineWidth=2;
+            ctx.moveTo(a,b);
+            ctx.lineTo(c,d);
+            ctx.stroke();
+            //Cuadrado
+            ctx.beginPath();
+            ctx.strokeRect(280,250,40,40);
+          }
+          tree(100,0,100,10); //1
+          tree(100,0,300,0); //2
+          tree(300,0,300,250); //3
     }
     appear();
 }
@@ -144,7 +158,7 @@ function selectEach(v) {
     body(4,100,115,170,160); //Brazo 2
     body(5,100,210,30,285); //Pierna 1
     body(6,100,210,170,285); //Pierna 2
-    body(7,0,102,200,102,5,"red"); //Muerte
+    body(7,30,102,300,102,5,"red"); //Muerte
   //Declarar victoria
     function victory() {
       if(aciertos.innerText==confirmar.length) {

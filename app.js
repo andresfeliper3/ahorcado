@@ -4,6 +4,16 @@ function confirm() {
    palabra = document.getElementById('palabra');
    confirmar = palabra.value.toLowerCase();
   console.log(confirmar);
+   function noNumber () {
+     for(var i=0;i<10;i++) {
+      if(confirmar.indexOf(""+i+"")!=-1) {
+        location.reload();
+        alert("No se valen los números");
+        break;
+      }
+    }
+  }
+  noNumber();
   //Caja de texto vacía
   if(confirmar=="") {
     alert("Debe ingresar una palabra");
@@ -28,7 +38,7 @@ function confirm() {
             //Canvas
     var canvas = document.getElementById('myCanvas');
     canvas.style.display="inline-block";
-    canvas.width =200;
+    canvas.width =400;
     canvas.height =400;
     ctx = canvas.getContext("2d");
   //Contador de errores (linea 79)
@@ -50,11 +60,43 @@ function confirm() {
           document.body.insertBefore(casillas,otro);
       }
     //Agregar espacios
-           espacio = confirmar.indexOf(" "); //REVISAR: Solo reconoce un espacio, solucionar con funcion que revisa cada index de la palabra
-          if(espacio!=-1) {
-            var espaciado = document.getElementById('cas'+espacio+'');
+          espacio = confirmar.indexOf(" ");
+          espacio2 = confirmar.indexOf(" ",espacio+1);
+          todosEspacios = [espacio,espacio2];
+        function placeSpaces(a) {
+          if(a!=-1) {
+            var tomarEspacio = confirmar.charAt(a);
+            var espaciado = document.getElementById('cas'+a+'');
             espaciado.style.border = "none";
           }
+        }
+        placeSpaces(espacio);
+        placeSpaces(espacio2);
+        //Para que se muestre si hay más de dos espacios
+        while(espacio2<confirmar.length && espacio2 != -1) {
+          espacio2 = confirmar.indexOf(" ",espacio2+1);
+          placeSpaces(espacio2);
+          todosEspacios.push(espacio2);
+        }
+        if (espacio2 == -1) { //para que los espacios no se vean afectados por el -1, al terminar el ciclo
+          espacio2=espacio;
+        }
+        todosEspacios.pop();
+
+        //Canvas de la horca
+        function tree(a,b,c,d) {
+          ctx.beginPath();
+          ctx.lineWidth=2;
+          ctx.moveTo(a,b);
+          ctx.lineTo(c,d);
+          ctx.stroke();
+          //Cuadrado
+          ctx.beginPath();
+          ctx.strokeRect(280,250,40,40);
+        }
+        tree(100,0,100,10); //1
+        tree(100,0,300,0); //2
+        tree(300,0,300,250); //3
     }
     appear();
 }
@@ -140,12 +182,12 @@ function selectEach(v) {
       ctx.stroke();
     }
   }
-  body(2,100,90,100,300); //Cuerpo
+  body(2,100,90,100,210); //Cuerpo
   body(3,100,115,30,160); //Brazo 1
   body(4,100,115,170,160); //Brazo 2
   body(5,100,210,30,285); //Pierna 1
   body(6,100,210,170,285); //Pierna 2
-  body(7,0,102,200,102,5,"red"); //Muerte
+  body(7,30,102,300,102,5,"red"); //Muerte
 //Doble click en tecla acertada no se marque como otro acierto
   //m1.innerText.indexOf();
   //Declarar victoria
@@ -153,8 +195,8 @@ function selectEach(v) {
       if(aciertos.innerText==confirmar.length) {
         alert("Ganaste");
       }
-  //Victoria cuando hay un espacio
-      var confirmarmenos = confirmar.length-1;
+  //Victoria cuando hay cualquier cantidad de espacios
+      var confirmarmenos = confirmar.length-todosEspacios.length;
       console.log("revisar "+confirmarmenos)
       if(espacio!=-1) {
         if(aciertos.innerText==confirmarmenos) {
